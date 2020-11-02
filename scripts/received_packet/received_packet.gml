@@ -5,6 +5,11 @@ with(con_server) {
 	
 	switch(msgid) {
 		case NETWORK.status:
+			var _status = buffer_read(buffer, buffer_u8);
+			switch(_status) {
+				case STATUS.ready_pressed:
+					key_ready_pressed();
+			}
 			break;
 		case NETWORK.game_round:
 			var gameround = buffer_read(buffer, buffer_u8);
@@ -23,9 +28,16 @@ with(con_server) {
 				case CONFIG.name:
 					var token_name = buffer_read(buffer, buffer_string);
 					show_message("test!!!!!");
-					ds_map_add(async_load, name, token_name);
-					show_message("name: " + string(ds_map_find_value(async_load, name)));
+					//ds_map_add(async_load, name, token_name);
+					//show_message("name: " + string(ds_map_find_value(async_load, name)));
+					global._player.name = token_name;
+					global.num_player_ready++;
+					show_message("Name: " + string(global._player.name));
+					if(global.num_player_ready == 2) {
+						
+					}
 					break;
+					
 			}
 	}
 	
@@ -40,15 +52,25 @@ with(con_server) {
 		for(var i = 0; i < array_length_1d(global.stored_keys); i++;) {
 			show_message(global.stored_keys[i]);	
 		}
-		buffer_seek(server_buffer,buffer_seek_start,0);
+		buffer_seek(server_buffer, buffer_seek_start, 0);
 		buffer_write(server_buffer, buffer_u8, NETWORK.status); //network type
 		buffer_write(server_buffer, buffer_u8, STATUS.during_conducter_game); //game mode??
 		buffer_write(server_buffer, buffer_u8, key_token); // key
-		network_send_packet(socket, server_buffer, buffer_tell(server_buffer));
+		network_send_packet(socket^3, server_buffer, buffer_tell(server_buffer));
 	}
 	
 	function player_game() {
+		var key_token = buffer_read(buffer, buffer_u8);
+		//check with stored_key
+		
+	}
 	
+	function key_ready_pressed() {
+		if (global.num_player_ready == 2) {
+			//random role
+			global.player_1_role = round(random(1));
+		}
+		
 	}
 }
 
