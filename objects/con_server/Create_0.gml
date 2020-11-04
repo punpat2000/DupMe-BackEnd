@@ -23,3 +23,10 @@ globalvar player_1_score;
 globalvar player_2_score;
 
 global.num_player_ready = 0;
+
+globalvar perfect_pitch;
+globalvar instrument;
+globalvar conducting_time;
+globalvar number_of_round;
+globalvar wallpaper;
+

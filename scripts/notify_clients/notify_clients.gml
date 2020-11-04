@@ -20,6 +20,18 @@ function notify_clients(player_action){
 			//for(var i = 0; i < ds_list_size(socket_list); i++){
 			//	network_send_packet(ds_list_find_value(socket_list, i), server_buffer, buffer_tell(server_buffer));
 			//}
+			var token_name = buffer_read(buffer, buffer_string);
+			global._player.name = token_name;
+			show_message(global._player.name)
+			//if(global.num_player == 1) {
+			//	var setting = buffer_read(buffer, buffer_u8);
+			//	switch (setting) {
+			//		case NETWORK.game_setting:
+			//			main_setting();
+						
+			//			break;
+			//	}
+			//}
 			if(global.num_player == 2) {
 				buffer_seek(server_buffer, buffer_seek_start, 0);
 				buffer_write(server_buffer, buffer_u8, NETWORK.status);
