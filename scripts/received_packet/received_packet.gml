@@ -26,19 +26,13 @@ with(con_server) {
 			var _config = buffer_read(buffer, buffer_u8);
 			switch(_config) {
 				case CONFIG.name:
-					var token_name = buffer_read(buffer, buffer_string);
-					show_message("test!!!!!");
-					//ds_map_add(async_load, name, token_name);
-					//show_message("name: " + string(ds_map_find_value(async_load, name)));
-					global._player.name = token_name;
-					global.num_player_ready++;
-					show_message("Name: " + string(global._player.name));
-					if(global.num_player_ready == 2) {
-						
-					}
+					player_config();
 					break;
 					
 			}
+			
+		case NETWORK.game_setting:
+			main_setting();
 	}
 	
 	function reset_stored_keys() {
