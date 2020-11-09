@@ -14,7 +14,7 @@ enum PLAYER_STATUS {
 	guest
 }
 
-enum CONFIG {
+enum PLAYER_CONFIG {
 	name, //client sends to server
 	role, //server randomly assigns
 }
@@ -37,7 +37,7 @@ enum ROLE {
 enum STATUS {
 	wait_for_other,
 	wait_for_your_readiness,
-	wait_for_other_ready,
+	wait_for_ready,
 	ready_pressed,
 	conducter_mode_start,
 	player_mode_start,
@@ -49,6 +49,12 @@ enum STATUS {
 enum MODE {
 	guitar,
 	piano
+}
+
+enum WALLPAPER {
+	overworld,
+	nether,
+	theend
 }
 
 enum PIANOKEYS {

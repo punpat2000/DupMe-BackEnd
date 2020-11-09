@@ -2,6 +2,7 @@ with(con_server) {
 	buffer = argument0;
 	socket = argument1;
 	msgid = buffer_read(buffer, buffer_u8);
+	show_message(msgid)
 	
 	switch(msgid) {
 		case NETWORK.status:
@@ -25,14 +26,17 @@ with(con_server) {
 		case NETWORK.player_config:
 			var _config = buffer_read(buffer, buffer_u8);
 			switch(_config) {
-				case CONFIG.name:
+				case PLAYER_CONFIG.name:
 					player_config();
 					break;
 					
 			}
-			
+			break;
 		case NETWORK.game_setting:
-			main_setting();
+			show_message("game setting called");
+			if (socket == 1)
+				main_setting();
+			break;
 	}
 	
 	function reset_stored_keys() {

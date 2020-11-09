@@ -2,13 +2,13 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function player_config(){
 	var token_name = buffer_read(buffer, buffer_string);
-	show_message("test!!!!!");
-	//ds_map_add(async_load, name, token_name);
-	//show_message("name: " + string(ds_map_find_value(async_load, name)));
-	global._player.name = token_name;
-	global.num_player_ready++;
-	show_message("Name: " + string(global._player.name));
-	if(global.num_player_ready == 2) {
-						
-	}
+	ds_map_find_value(socket_to_instanceid, socket).name = token_name
+	
+	buffer_seek(server_buffer, buffer_seek_start, 0);
+	buffer_write(server_buffer, buffer_u8, NETWORK.player_config);
+	buffer_write(server_buffer, buffer_u8, PLAYER_CONFIG.name);
+	buffer_write(server_buffer, buffer_string, token_name);
+	network_send_packet(socket^3, server_buffer, buffer_tell(server_buffer));
+	
+	show_message("Name: " + string(ds_map_find_value(socket_to_instanceid, socket).name));
 }
