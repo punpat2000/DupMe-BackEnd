@@ -83,5 +83,17 @@ enum PIANOKEYS {
 	gsr,
 	ar,
 	asr,
-	br
+	br,
+	cm,
+	csm,
+	dm,
+	dsm,
+	em,
+	fm,
+	fsm,
+	gm,
+	gsm,
+	am,
+	asm,
+	bm,
 }
