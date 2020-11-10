@@ -10,5 +10,5 @@ function player_config(){
 	buffer_write(server_buffer, buffer_string, token_name);
 	network_send_packet(socket^3, server_buffer, buffer_tell(server_buffer));
 	
-	show_message("Name: " + string(ds_map_find_value(socket_to_instanceid, socket).name));
+	//show_message("Name: " + string(ds_map_find_value(socket_to_instanceid, socket).name));
 }

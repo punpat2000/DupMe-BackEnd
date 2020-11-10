@@ -6,7 +6,7 @@
     "path": "folders/Scripts/network.yy",
   },
   "resourceVersion": "1.0",
-  "name": "network",
+  "name": "network_status",
   "tags": [],
   "resourceType": "GMScript",
 }

@@ -27,6 +27,7 @@ enum PLAYER_EVENT {
 enum GAME_ROUND {
 	conducter,
 	player,
+	number,
 }
 
 enum ROLE {
@@ -44,6 +45,7 @@ enum STATUS {
 	during_conducter_game,
 	during_player_game,
 	disconnected,
+	start_pressed,
 }
 
 enum MODE {

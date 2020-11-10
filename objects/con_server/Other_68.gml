@@ -22,7 +22,7 @@ switch(type_event){
 	case network_type_data:
 		buffer = ds_map_find_value(async_load, "buffer");
 		socket = ds_map_find_value(async_load, "id");
-		show_message("socket: " + string(socket));
+		//show_message("socket: " + string(socket));
 		buffer_seek(buffer, buffer_seek_start, 0);
 		received_packet(buffer, socket);
 		break;

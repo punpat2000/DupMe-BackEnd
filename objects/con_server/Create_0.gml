@@ -8,7 +8,8 @@ socket_list = ds_list_create();
 
 socket_to_instanceid = ds_map_create();
 
-globalvar stored_keys;
+globalvar stored_conducter_keys;
+globalvar stored_player_keys;
 global.i = 0;
 
 global.num_player = 0;
@@ -24,8 +25,11 @@ globalvar player_2_score;
 
 global.num_player_ready = 0;
 
+global.game_round = 0;
+
 globalvar perfect_pitch;
 globalvar instrument;
+globalvar octave;
 globalvar conducting_time;
 globalvar number_of_round;
 globalvar wallpaper;

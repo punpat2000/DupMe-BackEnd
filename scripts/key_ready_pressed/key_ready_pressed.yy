@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "network",
-    "path": "folders/Scripts/network.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "network",
+  "name": "key_ready_pressed",
   "tags": [],
   "resourceType": "GMScript",
 }
