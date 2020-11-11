@@ -10,8 +10,8 @@
     {"id":{"name":"player_config","path":"scripts/player_config/player_config.yy",},"order":4,},
     {"id":{"name":"network","path":"scripts/network/network.yy",},"order":0,},
     {"id":{"name":"network_status","path":"scripts/network_status/network_status.yy",},"order":1,},
-    {"id":{"name":"conducter_game","path":"scripts/conducter_game/conducter_game.yy",},"order":8,},
-    {"id":{"name":"game_setting","path":"scripts/game_setting/game_setting.yy",},"order":2,},
+    {"id":{"name":"conductor_game","path":"scripts/conductor_game/conductor_game.yy",},"order":8,},
+    {"id":{"name":"game_setting","path":"scripts/game_setting/game_setting.yy",},"order":1,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":2,},
     {"id":{"name":"received_packet","path":"scripts/received_packet/received_packet.yy",},"order":0,},
     {"id":{"name":"key_ready_pressed","path":"scripts/key_ready_pressed/key_ready_pressed.yy",},"order":5,},
@@ -50,6 +50,7 @@
     {"folderPath":"folders/Notes.yy","order":11,"resourceVersion":"1.0","name":"Notes","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Extensions.yy","order":12,"resourceVersion":"1.0","name":"Extensions","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/network.yy","order":6,"resourceVersion":"1.0","name":"network","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Scripts/enumerators.yy","order":10,"resourceVersion":"1.0","name":"enumerators","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},

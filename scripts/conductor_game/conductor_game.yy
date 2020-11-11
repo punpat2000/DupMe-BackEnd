@@ -6,7 +6,7 @@
     "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "conducter_game",
+  "name": "conductor_game",
   "tags": [],
   "resourceType": "GMScript",
 }

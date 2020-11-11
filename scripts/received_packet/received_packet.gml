@@ -12,7 +12,7 @@ with(con_server) {
 			var gameround = buffer_read(buffer, buffer_u8);
 			switch(gameround) {
 				case GAME_ROUND.conducter:
-					conducter_game();
+					conductor_game();
 					break;
 				case GAME_ROUND.player:
 					player_game();

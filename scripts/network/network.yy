@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "network",
-    "path": "folders/Scripts/network.yy",
+    "name": "enumerators",
+    "path": "folders/Scripts/enumerators.yy",
   },
   "resourceVersion": "1.0",
   "name": "network",
