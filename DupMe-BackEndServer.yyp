@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"room_server","path":"rooms/room_server/room_server.yy",},"order":0,},
     {"id":{"name":"con_server","path":"objects/con_server/con_server.yy",},"order":1,},
+    {"id":{"name":"player_mode_start","path":"scripts/player_mode_start/player_mode_start.yy",},"order":11,},
     {"id":{"name":"notify_clients","path":"scripts/notify_clients/notify_clients.yy",},"order":1,},
     {"id":{"name":"Object2","path":"objects/Object2/Object2.yy",},"order":0,},
     {"id":{"name":"main_setting","path":"scripts/main_setting/main_setting.yy",},"order":3,},
@@ -14,6 +15,7 @@
     {"id":{"name":"game_setting","path":"scripts/game_setting/game_setting.yy",},"order":1,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":2,},
     {"id":{"name":"received_packet","path":"scripts/received_packet/received_packet.yy",},"order":0,},
+    {"id":{"name":"round_change","path":"scripts/round_change/round_change.yy",},"order":12,},
     {"id":{"name":"key_ready_pressed","path":"scripts/key_ready_pressed/key_ready_pressed.yy",},"order":5,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],

@@ -17,6 +17,10 @@ enum PLAYER_STATUS {
 enum PLAYER_CONFIG {
 	name, //client sends to server
 	role, //server randomly assigns
+	increment_score,
+	wrong_key,
+	right_keys,
+	reset,
 }
 
 enum PLAYER_EVENT {
@@ -46,6 +50,9 @@ enum STATUS {
 	during_player_game,
 	disconnected,
 	start_pressed,
+	conductor_mode_end,
+	player_mode_end,
+	game_ended,
 }
 
 enum MODE {

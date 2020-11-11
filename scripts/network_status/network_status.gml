@@ -9,5 +9,8 @@ function network_status(){
 		case STATUS.start_pressed:
 			key_start_pressed();
 			break;
+		case STATUS.conductor_mode_end:
+			player_mode_start();
+			break;
 	}
 }

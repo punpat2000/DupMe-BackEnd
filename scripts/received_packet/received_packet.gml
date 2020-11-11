@@ -25,6 +25,12 @@ with(con_server) {
 				case PLAYER_CONFIG.name:
 					player_config();
 					break;
+				case PLAYER_CONFIG.reset:
+					global.resets++;
+					if (global.resets == 2) {
+						round_change();
+						global.resets = 0;
+					}
 					
 			}
 			break;

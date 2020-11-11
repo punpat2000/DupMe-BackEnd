@@ -14,14 +14,9 @@ globalvar stored_conductor_keys;
 globalvar stored_player_keys;
 global.conductor_keys_i = 0;
 global.player_keys_i = 0;
+global.resets = 0;
 
 global.num_player = 0;
-
-globalvar player_1_role;
-globalvar player_2_role;
-
-globalvar player_1_score;
-globalvar player_2_score;
 
 global.num_player_ready = 0;
 
