@@ -10,33 +10,67 @@ function player_game(){
 	network_send_packet(socket^3, global.server_buffer, buffer_tell(global.server_buffer));
 	global.stored_player_keys[global.player_keys_i] = key_token;
 	if(global.player_keys_i + 1 == global.conductor_keys_i) {
-		//show_message(global.current_game_round + 1)
-		if (global.current_game_round + 1 == global.game_round * 2) {
-			//finish
-			global.current_game_round = 0;
-			buffer_seek(global.server_buffer, buffer_seek_start, 0);
-			buffer_write(global.server_buffer, buffer_u8, NETWORK.status); //network type
-			buffer_write(global.server_buffer, buffer_u8, STATUS.game_ended); //game mode??
-			for(var i = 0; i < ds_list_size(socket_list); i++){
-				network_send_packet(ds_list_find_value(socket_list, i), global.server_buffer, buffer_tell(global.server_buffer));
-			}
-			buffer_seek(global.server_buffer, buffer_seek_start, 0);
-			buffer_write(global.server_buffer, buffer_u8, NETWORK.status);
-			buffer_write(global.server_buffer, buffer_u8, STATUS.wait_for_your_readiness);
-			network_send_packet(socket, global.server_buffer, buffer_tell(global.server_buffer));
+		if(global.stored_player_keys[global.player_keys_i] != global.stored_conductor_keys[global.player_keys_i]) {
+			//show_message(global.current_game_round + 1)
+			//show_message(global.game_round * 2)
+			if (global.current_game_round + 1 == global.game_round * 2) {
+				global.current_game_round = 0;
+				buffer_seek(global.server_buffer, buffer_seek_start, 0);
+				buffer_write(global.server_buffer, buffer_u8, NETWORK.status); //network type
+				buffer_write(global.server_buffer, buffer_u8, STATUS.game_ended); //game mode??
+				for(var i = 0; i < ds_list_size(socket_list); i++){
+					network_send_packet(ds_list_find_value(socket_list, i), global.server_buffer, buffer_tell(global.server_buffer));
+				}
+				buffer_seek(global.server_buffer, buffer_seek_start, 0);
+				buffer_write(global.server_buffer, buffer_u8, NETWORK.status);
+				buffer_write(global.server_buffer, buffer_u8, STATUS.wait_for_your_readiness);
+				network_send_packet(socket, global.server_buffer, buffer_tell(global.server_buffer));
 				
-			buffer_seek(global.server_buffer, buffer_seek_start, 0);
-			buffer_write(global.server_buffer, buffer_u8, NETWORK.status);
-			buffer_write(global.server_buffer, buffer_u8, STATUS.wait_for_ready);
-			network_send_packet(socket^3, global.server_buffer, buffer_tell(global.server_buffer));
+				buffer_seek(global.server_buffer, buffer_seek_start, 0);
+				buffer_write(global.server_buffer, buffer_u8, NETWORK.status);
+				buffer_write(global.server_buffer, buffer_u8, STATUS.wait_for_ready);
+				network_send_packet(socket^3, global.server_buffer, buffer_tell(global.server_buffer));
+			} else {
+				global.current_game_round++;
+				//swap roll
+				//end_round
+				//send wrong key
+				buffer_seek(global.server_buffer, buffer_seek_start, 0);
+				buffer_write(global.server_buffer, buffer_u8, NETWORK.player_config); //network type
+				buffer_write(global.server_buffer, buffer_u8, PLAYER_CONFIG.wrong_key); //game mode??
+				for(var i = 0; i < ds_list_size(socket_list); i++){
+					network_send_packet(ds_list_find_value(socket_list, i), global.server_buffer, buffer_tell(global.server_buffer));
+				}
+			} 
 		} else {
-			global.current_game_round++;
-			//swap roll
-			buffer_seek(global.server_buffer, buffer_seek_start, 0);
-			buffer_write(global.server_buffer, buffer_u8, NETWORK.player_config); //network type
-			buffer_write(global.server_buffer, buffer_u8, PLAYER_CONFIG.right_keys); //game mode??
-			for(var i = 0; i < ds_list_size(socket_list); i++){
-				network_send_packet(ds_list_find_value(socket_list, i), global.server_buffer, buffer_tell(global.server_buffer));
+			//show_message(global.current_game_round + 1)
+			if (global.current_game_round + 1 == global.game_round * 2) {
+				//finish
+				global.current_game_round = 0;
+				buffer_seek(global.server_buffer, buffer_seek_start, 0);
+				buffer_write(global.server_buffer, buffer_u8, NETWORK.status); //network type
+				buffer_write(global.server_buffer, buffer_u8, STATUS.game_ended); //game mode??
+				for(var i = 0; i < ds_list_size(socket_list); i++){
+					network_send_packet(ds_list_find_value(socket_list, i), global.server_buffer, buffer_tell(global.server_buffer));
+				}
+				buffer_seek(global.server_buffer, buffer_seek_start, 0);
+				buffer_write(global.server_buffer, buffer_u8, NETWORK.status);
+				buffer_write(global.server_buffer, buffer_u8, STATUS.wait_for_your_readiness);
+				network_send_packet(socket, global.server_buffer, buffer_tell(global.server_buffer));
+				
+				buffer_seek(global.server_buffer, buffer_seek_start, 0);
+				buffer_write(global.server_buffer, buffer_u8, NETWORK.status);
+				buffer_write(global.server_buffer, buffer_u8, STATUS.wait_for_ready);
+				network_send_packet(socket^3, global.server_buffer, buffer_tell(global.server_buffer));
+			} else {
+				global.current_game_round++;
+				//swap roll
+				buffer_seek(global.server_buffer, buffer_seek_start, 0);
+				buffer_write(global.server_buffer, buffer_u8, NETWORK.player_config); //network type
+				buffer_write(global.server_buffer, buffer_u8, PLAYER_CONFIG.right_keys); //game mode??
+				for(var i = 0; i < ds_list_size(socket_list); i++){
+					network_send_packet(ds_list_find_value(socket_list, i), global.server_buffer, buffer_tell(global.server_buffer));
+				}
 			}
 		}
 		
