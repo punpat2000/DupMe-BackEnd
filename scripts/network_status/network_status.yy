@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "enumerators",
-    "path": "folders/Scripts/enumerators.yy",
+    "name": "network",
+    "path": "folders/Scripts/network.yy",
   },
   "resourceVersion": "1.0",
-  "name": "network",
+  "name": "network_status",
   "tags": [],
   "resourceType": "GMScript",
 }

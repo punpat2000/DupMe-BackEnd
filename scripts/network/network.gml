@@ -4,12 +4,23 @@ enum NETWORK {
 	game_round,
 	player_event,
 	player_config,
-	player_establish
+	player_establish,
+	game_setting,
+	player_status,
 }
 
-enum CONFIG {
+enum PLAYER_STATUS {
+	host,
+	guest
+}
+
+enum PLAYER_CONFIG {
 	name, //client sends to server
 	role, //server randomly assigns
+	increment_score,
+	wrong_key,
+	right_keys,
+	reset,
 }
 
 enum PLAYER_EVENT {
@@ -20,6 +31,7 @@ enum PLAYER_EVENT {
 enum GAME_ROUND {
 	conducter,
 	player,
+	number,
 }
 
 enum ROLE {
@@ -36,11 +48,22 @@ enum STATUS {
 	player_mode_start,
 	during_conducter_game,
 	during_player_game,
+	disconnected,
+	start_pressed,
+	conductor_mode_end,
+	player_mode_end,
+	game_ended,
 }
 
 enum MODE {
 	guitar,
 	piano
+}
+
+enum WALLPAPER {
+	overworld,
+	nether,
+	theend
 }
 
 enum PIANOKEYS {
@@ -67,5 +90,17 @@ enum PIANOKEYS {
 	gsr,
 	ar,
 	asr,
-	br
+	br,
+	cm,
+	csm,
+	dm,
+	dsm,
+	em,
+	fm,
+	fsm,
+	gm,
+	gsm,
+	am,
+	asm,
+	bm,
 }

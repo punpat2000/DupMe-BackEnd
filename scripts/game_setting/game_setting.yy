@@ -6,7 +6,7 @@
     "path": "folders/Scripts/enumerators.yy",
   },
   "resourceVersion": "1.0",
-  "name": "network",
+  "name": "game_setting",
   "tags": [],
   "resourceType": "GMScript",
 }
