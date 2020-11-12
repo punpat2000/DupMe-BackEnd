@@ -14,6 +14,7 @@
     {"id":{"name":"network_status","path":"scripts/network_status/network_status.yy",},"order":1,},
     {"id":{"name":"conductor_game","path":"scripts/conductor_game/conductor_game.yy",},"order":8,},
     {"id":{"name":"game_setting","path":"scripts/game_setting/game_setting.yy",},"order":1,},
+    {"id":{"name":"spr_reset","path":"sprites/spr_reset/spr_reset.yy",},"order":0,},
     {"id":{"name":"reset_btn","path":"objects/reset_btn/reset_btn.yy",},"order":4,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":2,},
     {"id":{"name":"received_packet","path":"scripts/received_packet/received_packet.yy",},"order":0,},

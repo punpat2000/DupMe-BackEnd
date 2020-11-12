@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_reset",
+    "path": "sprites/spr_reset/spr_reset.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
