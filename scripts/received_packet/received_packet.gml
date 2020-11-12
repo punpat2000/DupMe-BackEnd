@@ -31,6 +31,7 @@ with(con_server) {
 						round_change();
 						global.resets = 0;
 					}
+					break;
 					
 			}
 			break;
