@@ -6,7 +6,7 @@ enum NETWORK {
 	player_config,
 	player_establish,
 	game_setting,
-	player_status,
+	player_status
 }
 
 enum PLAYER_STATUS {
@@ -53,6 +53,7 @@ enum STATUS {
 	conductor_mode_end,
 	player_mode_end,
 	game_ended,
+	game_reset
 }
 
 enum MODE {
